@@ -1,8 +1,6 @@
 Golang on VS Code
 ====
 
-[Elvish Language Specification](https://elv.sh/ref/language.html)
-
 ## Requirement
 
 - [Visual Studio Code](https://code.visualstudio.com/download)
