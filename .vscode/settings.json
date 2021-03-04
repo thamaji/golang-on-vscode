@@ -1,0 +1,44 @@
+{
+    "terminal.integrated.allowChords": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/.devcontainer/.extensions": true,
+        "**/devcontainer/.go": true
+    },
+    "files.eol": "\n",
+    "go.useLanguageServer": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.formatTool": "goimports",
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast",
+        "-exclude=vendor/..."
+    ],
+    "go.lintOnSave": "workspace",
+    "go.buildOnSave": "workspace",
+    "go.vetOnSave": "workspace",
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        }
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true,
+        "staticcheck": false,
+    },
+    "cSpell.ignorePaths": [
+        "**/.git/objects/**",
+        "**/.devcontainer/**",
+        "**/.vscode/**"
+    ],
+    "cSpell.words": [
+    ]
+}
