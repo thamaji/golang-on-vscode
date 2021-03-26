@@ -1,12 +1,4 @@
 {
-    "terminal.integrated.allowChords": false,
-    "files.exclude": {
-        "**/.git": true,
-        "**/.DS_Store": true,
-        "**/.devcontainer/.extensions": true,
-        "**/.devcontainer/.go": true
-    },
-    "files.eol": "\n",
     "go.useLanguageServer": true,
     "go.autocompleteUnimportedPackages": true,
     "go.formatTool": "goimports",
@@ -37,7 +29,8 @@
     "cSpell.ignorePaths": [
         "**/.git/objects/**",
         "**/.devcontainer/**",
-        "**/.vscode/**"
+        "**/.vscode/**",
+        "**/go.mod"
     ],
     "cSpell.words": [
     ]

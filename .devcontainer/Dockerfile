@@ -55,6 +55,7 @@ RUN set -x \
         tar \
         time \
         unzip \
+        xz-utils \
         zip \
     && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
@@ -77,17 +78,23 @@ RUN set -x \
     && usermod -aG docker vscode
 
 # docker compose
+ARG COMPOSE_VERSION=1.27.4
 RUN set -x \
-    && curl -fsSL "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        curl \
+    && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
+    && curl -fsSL "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose \
-    && curl -fsSL -o /etc/bash_completion.d/docker-compose "https://raw.githubusercontent.com/docker/compose/1.27.4/contrib/completion/bash/docker-compose"
+    && curl -fsSL -o /etc/bash_completion.d/docker-compose "https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose"
 
 # golang
-ARG GO_VERSION=1.16
+ARG GO_VERSION=1.16.1
 RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         build-essential \
+        curl \
     && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
     && curl -fsSL "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz" | tar -xz -C /usr/local
 ENV GOROOT=/usr/local/go \

@@ -6,7 +6,8 @@
 		"dockerfile": "Dockerfile",
 		"context": ".",
 		"args": {
-			"GO_VERSION": "1.16"
+			"COMPOSE_VERSION": "1.27.4",
+			"GO_VERSION": "1.16.1"
 		},
 		"target": "devcontainer"
 	},
@@ -24,9 +25,28 @@
 		"--init",
 		"--net=host"
 	],
+	"containerEnv": {
+		"LOCAL_WORKSPACE": "${localWorkspaceFolder}"
+	},
 	"extensions": [
+		"766b.go-outliner",
 		"golang.go",
-		"mosapride.zenkaku",
+		"jgclark.vscode-todo-highlight",
 		"streetsidesoftware.code-spell-checker"
-	]
+	],
+	"settings": {
+		"terminal.integrated.allowChords": false,
+		"files.exclude": {
+			"**/.devcontainer/.extensions": true,
+			"**/.devcontainer/.go": true
+		},
+		"files.watcherExclude": {
+			"**/.devcontainer/.extensions": true,
+			"**/.devcontainer/.go": true
+		},
+		"search.exclude": {
+			"**/.devcontainer/.extensions": true,
+			"**/.devcontainer/.go": true
+		}
+	}
 }
