@@ -26,6 +26,7 @@
 		"--net=host"
 	],
 	"containerEnv": {
+		"CONTAINER_WORKSPACE": "${containerWorkspaceFolder}",
 		"LOCAL_WORKSPACE": "${localWorkspaceFolder}"
 	},
 	"extensions": [

@@ -77,6 +77,9 @@ RUN set -x \
     && groupadd --gid 999 docker \
     && usermod -aG docker vscode
 
+COPY docker.sh /usr/local/bin/docker
+RUN chmod +x /usr/local/bin/docker
+
 # docker compose
 ARG COMPOSE_VERSION=1.27.4
 RUN set -x \
@@ -103,5 +106,5 @@ ENV GOROOT=/usr/local/go \
 
 USER vscode
 
-ADD entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "bash", "-eu", "/entrypoint.sh" ]
