@@ -34,20 +34,5 @@
 		"jgclark.vscode-todo-highlight",
 		"liuchao.go-struct-tag",
 		"streetsidesoftware.code-spell-checker"
-	],
-	"settings": {
-		"terminal.integrated.allowChords": false,
-		"files.exclude": {
-			"**/.devcontainer/.extensions": true,
-			"**/.devcontainer/.go": true
-		},
-		"files.watcherExclude": {
-			"**/.devcontainer/.extensions": true,
-			"**/.devcontainer/.go": true
-		},
-		"search.exclude": {
-			"**/.devcontainer/.extensions": true,
-			"**/.devcontainer/.go": true
-		}
-	}
+	]
 }

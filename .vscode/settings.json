@@ -1,4 +1,17 @@
 {
+    "terminal.integrated.allowChords": false,
+    "files.exclude": {
+        "**/.devcontainer/.extensions": true,
+        "**/.devcontainer/.go": true
+    },
+    "files.watcherExclude": {
+        "**/.devcontainer/.extensions": true,
+        "**/.devcontainer/.go": true
+    },
+    "search.exclude": {
+        "**/.devcontainer/.extensions": true,
+        "**/.devcontainer/.go": true
+    },
     "go.useLanguageServer": true,
     "go.autocompleteUnimportedPackages": true,
     "go.formatTool": "goimports",
