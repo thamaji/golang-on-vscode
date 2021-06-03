@@ -7,7 +7,7 @@
 		"context": ".",
 		"args": {
 			"COMPOSE_VERSION": "1.27.4",
-			"GO_VERSION": "1.16.1"
+			"GO_VERSION": "1.16.5"
 		},
 		"target": "devcontainer"
 	},
@@ -25,10 +25,6 @@
 		"--init",
 		"--net=host"
 	],
-	"containerEnv": {
-		"CONTAINER_WORKSPACE": "${containerWorkspaceFolder}",
-		"LOCAL_WORKSPACE": "${localWorkspaceFolder}"
-	},
 	"extensions": [
 		"766b.go-outliner",
 		"golang.go",

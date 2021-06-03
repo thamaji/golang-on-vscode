@@ -1,6 +1,9 @@
 FROM ubuntu:18.04 as devcontainer
 
 RUN set -x \
+    && sed -i.bak -r 's!(deb|deb-src) \S+!\1 mirror://mirrors.ubuntu.com/mirrors.txt!' /etc/apt/sources.list
+
+RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         ca-certificates \
@@ -91,14 +94,14 @@ RUN set -x \
 # docker / docker-compose in devcontainer
 RUN set -x \
     && mkdir -p /usr/local/devcontainer-tool/bin \
-    && curl -fsSL -o /usr/local/devcontainer-tool/bin/docker https://raw.githubusercontent.com/thamaji/devcontainer-docker/main/docker \
+    && curl -fsSL -o /usr/local/devcontainer-tool/bin/docker https://github.com/thamaji/devcontainer-docker/releases/download/v1.0.1/docker \
     && chmod +x /usr/local/devcontainer-tool/bin/docker \
-    && curl -fsSL -o /usr/local/devcontainer-tool/bin/docker-compose https://github.com/thamaji/devcontainer-compose/releases/download/v1.0.0/docker-compose \
+    && curl -fsSL -o /usr/local/devcontainer-tool/bin/docker-compose https://github.com/thamaji/devcontainer-compose/releases/download/v1.0.2/docker-compose \
     && chmod +x /usr/local/devcontainer-tool/bin/docker-compose
 ENV PATH=/usr/local/devcontainer-tool/bin:${PATH}
 
 # golang
-ARG GO_VERSION=1.16.1
+ARG GO_VERSION=1.16.5
 RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
