@@ -99,7 +99,7 @@ RUN set -x \
 ENV PATH=/usr/local/devcontainer-tool/bin:${PATH}
 
 # golang
-ARG GO_VERSION=1.16.5
+ARG GO_VERSION=1.17.1
 RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \

@@ -7,7 +7,7 @@
 		"context": ".",
 		"args": {
 			"COMPOSE_VERSION": "1.27.4",
-			"GO_VERSION": "1.16.5"
+			"GO_VERSION": "1.17.1"
 		},
 		"target": "devcontainer"
 	},
