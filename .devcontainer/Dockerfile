@@ -76,9 +76,7 @@ RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         docker-ce-cli \
-    && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
-    && groupadd --gid 999 docker \
-    && usermod -aG docker vscode
+    && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* 
 
 # docker compose
 ARG COMPOSE_VERSION=1.27.4
