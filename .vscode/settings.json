@@ -29,7 +29,8 @@
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true,
-        }
+        },
+        "editor.snippetSuggestions": "bottom"
     },
     "[go.mod]": {
         "editor.formatOnSave": true,
